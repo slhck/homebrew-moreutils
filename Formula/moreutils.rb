@@ -2,8 +2,8 @@ class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
   url "https://git.joeyh.name/git/moreutils.git",
-      :tag      => "0.63",
-      :revision => "aeddd0f4caa9d10aaa691040773fa4764e12ff46"
+      tag:      "0.63",
+      revision: "aeddd0f4caa9d10aaa691040773fa4764e12ff46"
   head "https://git.joeyh.name/git/moreutils.git"
 
   option "without-parallel", "Build without the 'parallel' tool."
@@ -12,9 +12,9 @@ class Moreutils < Formula
 
   depends_on "docbook-xsl" => :build
 
-  conflicts_with "parallel", :because => "Both install a `parallel` executable." if build.with? "parallel"
-  conflicts_with "pwntools", :because => "Both install an `errno` executable." if build.with? "errno"
-  conflicts_with "task-spooler", :because => "Both install a `ts` executable." if build.with? "ts"
+  conflicts_with "parallel", because: "Both install a `parallel` executable." if build.with? "parallel"
+  conflicts_with "pwntools", because: "Both install an `errno` executable." if build.with? "errno"
+  conflicts_with "task-spooler", because: "Both install a `ts` executable." if build.with? "ts"
 
   resource "Time::Duration" do
     url "https://cpan.metacpan.org/authors/id/N/NE/NEILB/Time-Duration-1.20.tar.gz"
@@ -44,15 +44,16 @@ class Moreutils < Formula
               "#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl"
       %w[parallel errno ts].each do |util|
         next if build.with? util
-        s.gsub! /^BINS=.*\K#{util}/, "", false
-        s.gsub! /^MANS=.*\K#{util}\.1/, ""
-        s.gsub! /^PERLSCRIPTS=.*\K#{util}/, "", false
+
+        s.gsub!(/^BINS=.*\K#{util}/, "", false)
+        s.gsub!(/^MANS=.*\K#{util}\.1/, "")
+        s.gsub!(/^PERLSCRIPTS=.*\K#{util}/, "", false)
       end
     end
     system "make", "all"
     system "make", "check"
     system "make", "install", "PREFIX=#{prefix}"
-    bin.env_script_all_files(libexec/"bin", :PERL5LIB => ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
