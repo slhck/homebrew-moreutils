@@ -10,18 +10,18 @@ The formula supports the following options:
 - `--without-errno`: Build without the 'errno' tool, for compatibility with 'pwntools'
 - `--without-ts`: Build without the 'ts' tool, for compatibility with 'task-spooler'
 
-## How do I install these formulae?
+## Installation
 
-`brew install slhck/moreutils/moreutils`
-
-Or `brew tap-pin slhck/moreutils` and then `brew install moreutils`.
-
-Or install via URL (which will not receive updates):
+Simply run:
 
 ```
-brew install https://raw.githubusercontent.com/slhck/homebrew-moreutils/master/Formula/moreutils.rb
+brew install slhck/moreutils/moreutils
 ```
 
-## Documentation
+## `parallel` won't upgrade?
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+If your Homebrew installation complains about not upgrading `parallel`, run:
+
+```
+brew unlink moreutils && brew install parallel && brew link moreutils
+```
