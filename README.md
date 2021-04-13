@@ -8,6 +8,7 @@ The formula supports the following options:
 
 - `--without-parallel`: Build without the 'parallel' tool
 - `--without-errno`: Build without the 'errno' tool, for compatibility with 'pwntools'
+- `--without-sponge`: Build without the 'sponge' tool, for compatibility with 'sponge'
 - `--without-ts`: Build without the 'ts' tool, for compatibility with 'task-spooler'
 
 ## Installation
