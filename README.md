@@ -1,5 +1,7 @@
 # Moreutils
 
+[![GitHub Actions CI](https://github.com/slhck/homebrew-moreutils/actions/workflows/main.yml/badge.svg)](https://github.com/slhck/homebrew-moreutils/actions/workflows/main.yml)
+
 This is a tap that provides a `moreutils` Formula for [Homebrew](https://brew.sh/) with additional options.
 
 ## Options
