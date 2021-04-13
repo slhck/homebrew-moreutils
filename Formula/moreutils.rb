@@ -2,8 +2,8 @@ class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
   url "https://git.joeyh.name/git/moreutils.git",
-      tag:      "0.63",
-      revision: "aeddd0f4caa9d10aaa691040773fa4764e12ff46"
+      tag:      "0.65",
+      revision: "c1a5c2bdac966c7baa6b03bdbd39fde1cd0728ca"
   head "https://git.joeyh.name/git/moreutils.git"
 
   option "without-parallel", "Build without the 'parallel' tool."
