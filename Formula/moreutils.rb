@@ -2,8 +2,8 @@ class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
   url "https://git.joeyh.name/git/moreutils.git",
-      tag:      "0.65",
-      revision: "c3261f4190c3803177b6c50ec43fd302171dd48e"
+      tag:      "0.67",
+      revision: "ee8e013cd5398c5fb34fb19a24db0f3b6185bac3"
   license all_of: [
     "GPL-2.0-or-later",
     { any_of: ["GPL-2.0-only", "Artistic-2.0"] },
